@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="jquery-1.9.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.3.1.min.css" />
+        <title>Obat Herbalh</title>
+    </head>
+    <body>
+        <div data-role="page" id="zero" data-theme="b">
+            <div data-role="header" data-theme="b">
+                <div data-role="navbar">
+                    <h1>Obat Herbal</h1>
+                </div>
+            </div>
+            <br>
+
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="Search.." 
+                data-filter-reveal="true" data-inset="true" style="list-style: none">
+
+                <li data-filtertext="11:first:one"><a href="#">one</a></li>
+                <li data-filtertext="22:second:two"><a href="#">two</a></li>
+                <li data-filtertext="33:third:three"><a href="#">three</a></li>
+                <li data-filtertext="44:fourth:four"><a href="#">four</a></li>
+
+            </ul>
+            <br>
+            <div data-role="navbar">
+                <ul>
+                    <li></li>
+                    <li><input id="search" type="text" placeholder="Search.." />
+                        <div id="showSearch">
+                            
+                        </div></li>
+                        <li><a href="#showSearch" onclick="search();" data-role="button">cari</a></li>
+                </ul>
+            </div>
+
+            <div data-role="content" data-theme="b">
+                <div class="ui-body-c"> 
+
+                    <a href="#one" data-transition="flow" data-role="button">Daftar Penyakit</a>
+                    <a href="#two" data-transition="flow" data-role="button">Daftar Tanaman Herbal</a>
+
+                </div>
+            </div>
+            <footer data-role="footer" data-theme="b">
+                     <a href="#end" data-transaction="flow" data-role="button" onclick="exitFromApp();">Exit</a>                 
+                
+            </footer>
+        </div>
+
+        <div data-role="page" id="one" data-url="one" data-theme="b">
+            <div data-role="header" data-theme="b">
+                <div data-role="navbar">
+                    <h1>Daftar Penyakit</h1>
+                </div>
+            </div>
+            <div data-role="content" data-theme="b" >
+                <ul>
+                    <li><a href="#show" data-role="button" id="penyakit_1" onclick="showPenyakit(1);">demam</a></li>
+                    <li><a href="#show" data-role="button" id="penyakit_2" onclick="showPenyakit(2);">insomnia</a></li>
+                    <li><a href="#show" data-role="button" id="penyakit_3" onclick="showPenyakit(3);">batuk</a></li>
+                    <li><a href="#show" data-role="button" id="penyakit_4" onclick="showPenyakit(4);">diuretik</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="page" id="two" data-url="two" data-theme="b">
+            <div data-role="header" data-theme="b">
+                <div data-role="navbar">
+                    <h1>Daftar Tananman Herbal</h1>
+                </div>
+            </div>
+            <div data-role="content" data-theme="b">
+                <ul  id="saran">
+                    <li value="batuk demam"><a href="#showTanaman" data-role="button" id="tanaman_1"
+                                               onclick="showTanaman(1);">Kelor</a></li>
+                    <li value="insomnia"><a href="#showTanaman" data-role="button" id="tanaman_2"
+                                            onclick="showTanaman(2);">Kangkung</a></li>
+                    <li value="demam"><a href="#showTanaman" data-role="button" id="tanaman_3"
+                                         onclick="showTanaman(3);">Sirih</a></li>
+                    <li value="pusing"><a href="#showTanaman" data-role="button" id="tanaman_4" 
+                                          onclick="showTanaman(4);">Jeruk Nipis</a></li>
+                    <li value="batuk"><a href="#showTanaman" data-role="button" id="tanaman_5" 
+                                         onclick="showTanaman(5);">Aren</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="page" id="show" data-url="show" data-theme="b">
+            <div data-role="header" data-theme="b">
+                <div data-role="navbar" id="header"></div>
+            </div>
+
+            <div data-role="content" data-theme="b">
+                <div id="gambar">
+                </div>
+                <div id="isi">
+                </div>
+                <p>Tanaman herbal yang disarankan untuk penyakit ini : </p>
+                <button onclick="saranTanaman();">Saran obat</button>
+                <div id="keterangan">
+
+                </div>
+            </div>
+
+            <footer data-role="footer" data-theme="c">
+
+            </footer>
+        </div>
+
+        <div data-role="page" id="showTanaman" data-url="showTanaman" data-theme="b">
+            <div data-role="header" data-theme="b" >
+                <div data-role="navbar" id="header2"></div>
+            </div>
+
+            <div data-role="content" data-theme="b">
+                <div id="gambar2">
+                </div>
+                <div id="isi2">
+                </div>
+
+                <div id="keterangan2">
+
+                </div>
+            </div>
+
+            <footer data-role="footer" data-theme="c">
+
+            </footer>
+        </div>
+
+
+        <script type="text/javascript" src="cordova-2.7.0.js"></script>
+        <script type="text/javascript" src="SQLitePlugin.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="jquery.mobile-1.3.1.min.js"></script>
+        <script type="text/javascript">
+
+                    function exitFromApp() {
+                        navigator.app.exitApp();
+                    }
+
+                    function saranTanaman() {
+                        var nama = "" + ($("#header").text().toLowerCase());
+                        //var li = $("li");
+                        $("#saran li").each(function() {
+                            var banding = "" + ($(this).attr('value').toLowerCase());
+                            //$("#keterangan").append($(this).attr('value'));
+                            //$("#keterangan").append(""+banding+""+nama+" ");
+
+                            if (banding.indexOf(nama) > -1) {
+                                $("#keterangan").append($(this).html());
+                                $("#keterangan").append("<br>");
+                            }
+                        });
+                        // $("#keterangan").append(nama);
+                        //$("#keterangan").append(coba);
+                        //$('li[value*=""+nama]').html().appendTo("#keterangan");
+                        //$("ul").find(li).val().find(":contains('" + nama + "')").html().appendTo($("#keterangan"));
+                        // if($("ul").find(li).val().contains(nama)){
+
+                        //}
+                    }
+
+                    //$("ul").listview('option', 'filterCallback', function(text, searchValue) {
+                    // console.log("text " + text + ", search with " + searchValue);
+                    // console.log(text.toLowerCase().indexOf(searchValue) === -1);
+                    //return text.toLowerCase().indexOf(searchValue) === -1;
+                    //});
+
+
+
+                  function search(){
+
+                        var elem = $("#search").val();
+
+                        var j = ""+elem.toLowerCase();
+
+                        for (var i = 1; i <= 4; i++) {
+                            var x = ""+$("#penyakit_" + i).text().toLowerCase();
+                            if (x.indexOf(j) > -1) {
+                                var s = document.getElementById("penyakit_" + i);
+                                $("#showSearch").append(s);
+                                $("#showSeacrh").append("<br>");
+                            }
+                            }
+                        
+                 
+                    //                                      else {
+                    //                                    $("#showSearch").empty();
+                    //                                }
+                    //                                           else {
+                    //                                           $("#showSearch").empty();
+                    //                                       }
+                    //                                       if (((document.getElementById("tanaman_" + i).innerHTML).toLowerCase()).indexOf((elem.value).toLowerCase()) > -1) {
+                    //                                           var j = document.getElementById("tanaman_" + i);
+                    //                                           
+                    //                                           $("showSearch").append(j);
+                    //                                           
+                    //                                           $("#showSearch").append("<br>");
+                    //                                       }
+
+                    //                            }
+                    //                        });
+
+
+                    document.addEventListener("deviceReady", onDeviceReady, false);
+                    function onDeviceReady() {
+                        var db = window.sqlitePlugin.openDatabase("tanaman_herbal", null);
+                        db.transaction(sukses, errorCB);
+                    }
+
+                    function sukses() {
+                        alert("Selamat Datang");
+                    }
+
+                    function showPenyakit(key) {
+                        var db = window.sqlitePlugin.openDatabase("tanaman_herbal", null);
+
+                        $("#gambar").empty();
+                        var src = "img/penyakit/" + key + ".jpg";
+                        var img = document.createElement("img");
+                        img.src = src;
+                        img.width = 276;
+                        img.height = 110;
+                        $("#gambar").append(img);
+
+
+
+                        db.transaction(function(tx) {
+                            queryPenyakit(tx, key);
+                        }, errorCB);
+                    }
+
+                    function queryPenyakit(tx, key) {
+                        var i = key;
+                        tx.executeSql("SELECT * FROM penyakit WHERE id = '" + i + "';", [], successPenyakit, errorCB);
+                    }
+
+                    function successPenyakit(tx, res) {
+                        var len = res.rows.length;
+                        var data = res.rows.item(0).keterangan;
+                        var nama = res.rows.item(0).nama;
+                        $("#keterangan").empty();
+                        $("#header").empty();
+                        $("#header").append(nama);
+                        $("#isi").empty();
+                        $("#isi").append(data);
+                    }
+
+                    function showTanaman(key) {
+                        var db = window.sqlitePlugin.openDatabase("tanaman_herbal", null);
+
+                        $("#gambar2").empty();
+                        var src = "img/tanaman/" + key + "t.jpg";
+                        var img = document.createElement("img");
+                        img.src = src;
+                        img.width = 276;
+                        img.height = 110;
+                        $("#gambar2").append(img);
+
+                        db.transaction(function(tx) {
+                            querryTanaman(tx, key);
+                        }, errorCB);
+                    }
+
+                    function querryTanaman(tx, key) {
+                        tx.executeSql("SELECT * FROM tanaman_herbal WHERE id = '" + key + "';", [], successTanaman, errorCB);
+                    }
+
+                    function successTanaman(tx, res) {
+                        var data = res.rows.item(0).keterangan;
+                        var nama = res.rows.item(0).nama;
+                        $("#keterangan2").empty();
+                        $("#header2").empty();
+                        $("#header2").append(nama);
+                        $("#isi2").empty();
+                        $("#isi2").append(data);
+                    }
+
+                    //            function showPenyakit() {
+                    //                var db = window.sqlitePlugin.openDatabase("tanaman_herbal", null);
+                    //                db.transaction(queryPenyakit, errorCB);
+                    //            }
+                    //
+                    //            function queryPenyakit(tx) {
+                    //                tx.executeSql("SELECT * FROM penyakit", [], successDB, errorCB);
+                    //            }
+                    //
+                    //            function successDB(tx, results) {
+                    //                var len = results.rows.length;
+                    //                for (var i = 0; i < len; i++) {
+                    //                    var data = results.rows.item(i).nama;
+                    //                    $("#show").append($("<a" + {text: results.rows.item(i).nama + "</a><br>"}));
+                    //                }
+                    //            }
+                    //
+                    //            function showTanaman() {
+                    //                var db = window.sqlitePlugin.openDatabase("tanaman_herbal", null);
+                    //                db.transaction(queryTanaman, errorCB);
+                    //            }
+                    //
+                    //            function queryTanaman(tx) {
+                    //                tx.executeSql("SELECT * FROM tanaman_herbal", [], successDB, errorCB);
+                    //            }
+
+                    function errorCB(e) {
+                        alert("Error gan" + e.message);
+                    }
+        </script>
+    </body>
+
+</html>
